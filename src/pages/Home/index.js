@@ -19,7 +19,8 @@ import {
   Name,
   Bio,
   ProfileButton,
-  ProfileButtonText,
+  ButtonText,
+  DeleteButton,
 } from './styles';
 
 export default class Home extends Component {
@@ -63,6 +64,14 @@ export default class Home extends Component {
     }
   };
 
+  handleDelete = user => {
+    const {users} = this.state;
+
+    users.splice(users.indexOf(user), 1);
+
+    this.setState({users});
+  };
+
   render() {
     //Pega o array de usuários do state,
     //para não ter que ficar escrevendo this.state antes da variável
@@ -98,8 +107,12 @@ export default class Home extends Component {
               <Bio>{item.bio}</Bio>
 
               <ProfileButton onPress={() => {}}>
-                <ProfileButtonText>Ver Perfil</ProfileButtonText>
+                <ButtonText>Ver Perfil</ButtonText>
               </ProfileButton>
+
+              <DeleteButton onPress={() => this.handleDelete(item)}>
+                <ButtonText>Excluir da lista</ButtonText>
+              </DeleteButton>
             </User>
           )}
         />

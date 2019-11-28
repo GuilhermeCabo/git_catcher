@@ -94,9 +94,21 @@ export const ProfileButton = styled(RectButton)`
   height: 36px;
 `;
 
-export const ProfileButtonText = styled.Text`
+export const DeleteButton = styled(RectButton)`
+  margin-top: 10px;
+  align-self: stretch; /* Força o botão a esticar e ocupar todo o espaço */
+  border-radius: 4px;
+  background-color: #cc3102;
+  justify-content: center;
+  align-items: center;
+  height: 36px;
+`;
+
+export const ButtonText = styled.Text`
   font-size: 14px;
   font-weight: bold;
   color: #fff;
   text-transform: uppercase;
 `;
+
+
